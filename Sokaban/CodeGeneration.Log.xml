@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///D:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2016-10-06T15:16:20" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="ProjectPath = ..\SokabanLib\SokabanLib.csproj" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Medium" Text="Sokaban's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'Sokaban::Program' -  (Class), 'Sokaban::Game' -  (Class), 'Sokaban::InputView' -  (Class), 'Sokaban::OutputView' -  (Class), 'Sokaban::Level' -  (Class), 'Sokaban::Field' -  (Class), 'Sokaban::levelmanager' -  (Class) " />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Medium" Text="Project Added: C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\SokabanLib.csproj" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Medium" Text="'Sokaban::Program' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\Program.cs" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Medium" Text="'Sokaban::Game' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\Game.cs" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Medium" Text="'Sokaban::InputView' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\InputView.cs" />
+  <Message Timestamp="2016-10-06T15:16:21" Importance="Medium" Text="'Sokaban::OutputView' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\OutputView.cs" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Medium" Text="'Sokaban::Level' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\Level.cs" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Medium" Text="'Sokaban::Field' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\Field.cs" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Medium" Text="'Sokaban::levelmanager' -  (Class) : success (file replaced) - C:\Users\mo\documents\visual studio 2013\Projects\ConsoleApplication1\SokabanLib\GeneratedCode\levelmanager.cs" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="ProjectPath = ..\SokabanLib\SokabanLib.csproj" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Medium" Text="Sokaban's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'Sokaban::Program' -  (Class), 'Sokaban::Game' -  (Class), 'Sokaban::InputView' -  (Class), 'Sokaban::OutputView' -  (Class), 'Sokaban::Level' -  (Class), 'Sokaban::Field' -  (Class), 'Sokaban::levelmanager' -  (Class) " />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::Program' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::Game' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::InputView' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::OutputView' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::Level' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::Field' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::levelmanager' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="The selection included 6 elements which were not bound to a template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::' -  (Association): no bound template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::' -  (Association): no bound template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::' -  (Association): no bound template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::' -  (Association): no bound template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::' -  (Association): no bound template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="Diagnostic" Text="'Sokaban::' -  (Association): no bound template." />
+  <Message Timestamp="2016-10-06T15:16:22" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+</Log>

@@ -11,16 +11,14 @@ using System.Text;
 
 public class Program
 {
-	public virtual Game Game
-	{
-		get;
-		set;
-	}
+    
 
     static void Main(string[] args)
     {
-        Console.WriteLine("De goede main");
+        Game game = new Game();
+        game.StartGame();
         Console.ReadLine();
+
     }
 }
 

@@ -11,11 +11,7 @@ using System.Text;
 
 public class Game
 {
-	public virtual Program Program
-	{
-		get;
-		set;
-	}
+    private bool gameIsWon = false;
 
 	public virtual InputView InputView
 	{
@@ -25,13 +21,37 @@ public class Game
 
 	public virtual void StartGame()
 	{
-        Console.WriteLine("Welkom bij sokaban");
+        Console.Clear();
+        Console.WriteLine("┌────────────────────────────────────────────────────┐");
+        Console.WriteLine("| Welkom bij Sokoban                                 |");
+        Console.WriteLine("|                                                    |");
+        Console.WriteLine("| betekenis van de symbolen   |   doel van het spel  |");
+        Console.WriteLine("|                             |                      |");
+        Console.WriteLine("| spatie : outerspace         |   duw met de truck   |");
+        Console.WriteLine("|      █ : muur               |   de krat(ten)       |");
+        Console.WriteLine("|      · : vloer              |   naar de bestemming |");
+        Console.WriteLine("|      O : krat               |                      |");
+        Console.WriteLine("|      0 : krat op bestemming |                      |");
+        Console.WriteLine("|      x : bestemming         |                      |");
+        Console.WriteLine("|      @ : truck              |                      |");
+        Console.WriteLine("|  WASD  : beweging           |                      |");
+        Console.WriteLine("└────────────────────────────────────────────────────┘");
+        Console.WriteLine("Press enter to continoue");
+        PlayTheGame();
 	}
 
 	public virtual void CheckIfWon()
 	{
-		throw new System.NotImplementedException();
+		
 	}
+
+    public void PlayTheGame()
+    {
+        while (!gameIsWon)
+        {
+
+        }
+    }
 
 }
 

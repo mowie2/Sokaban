@@ -11,16 +11,15 @@ using System.Text;
 
 public class Program
 {
-    
+
 
     static void Main(string[] args)
     {
-        Game game = new Game();
-       // game.StartGame();
-        Level l = new Level(10);
-        l.UpdateField();
-        Console.ReadLine();
-
+       // Game game = new Game();
+        //game.StartGame();
+        //Console.ReadLine();
+        levelmanager a = new levelmanager();
+        a.ReadFile(1);
     }
 }
 

@@ -47,7 +47,7 @@
     <Compile Include="generatedcode\InputView.cs" />
     <Compile Include="generatedcode\Level.cs" />
     <Compile Include="generatedcode\levelmanager.cs" />
-    <Compile Include="generatedcode\Objects.cs" />
+    <Compile Include="generatedcode\Item.cs" />
     <Compile Include="generatedcode\OutputView.cs" />
     <Compile Include="generatedcode\Program.cs" />
     <Compile Include="generatedcode\Truck.cs" />

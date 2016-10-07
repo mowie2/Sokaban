@@ -41,13 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="generatedcode\Box.cs" />
     <Compile Include="generatedcode\Field.cs" />
     <Compile Include="generatedcode\Game.cs" />
     <Compile Include="generatedcode\InputView.cs" />
     <Compile Include="generatedcode\Level.cs" />
     <Compile Include="generatedcode\levelmanager.cs" />
+    <Compile Include="generatedcode\Objects.cs" />
     <Compile Include="generatedcode\OutputView.cs" />
     <Compile Include="generatedcode\Program.cs" />
+    <Compile Include="generatedcode\Truck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

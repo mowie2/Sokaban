@@ -18,6 +18,10 @@ public class Game
 		get;
 		set;
 	}
+    public Game()
+    {
+        gameIsWon = false;
+    }
 
 	public virtual void StartGame()
 	{

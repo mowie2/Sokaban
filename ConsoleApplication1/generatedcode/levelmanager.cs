@@ -38,15 +38,26 @@ public class levelmanager
 	{
         throw new System.NotImplementedException();
 	}
-
+    
 	public virtual void RemoveLevel(Level level)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	private void ReadFile()
+    public List<string> ReadFile(int number)
 	{
-		
+        int counter = 0;
+        string line;
+        List<string> level = new List<string>();
+        System.IO.StreamReader file =
+        new System.IO.StreamReader("C://Users/Rijken/Desktop/git/Sokaban/ConsoleApplication1/Levelfields/doolhof"+number+".txt");
+        while ((line = file.ReadLine()) != null)
+        {
+            level.Add(line);
+            counter++;
+        }
+        file.Close();
+        return level;
 	}
 
 	public virtual void SetFields()

@@ -46,7 +46,7 @@ public class levelmanager
 
 	private void ReadFile()
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public virtual void SetFields()

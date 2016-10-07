@@ -9,28 +9,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Game
+public class Field
 {
-	public virtual Program Program
+	private int xPosition
 	{
 		get;
 		set;
 	}
 
-	public virtual InputView InputView
+	private int yPosition
 	{
 		get;
 		set;
 	}
 
-	public virtual void StartGame()
+	private bool isWall
 	{
-        Console.WriteLine("Welkom bij sokaban");
+		get;
+		set;
 	}
 
-	public virtual void CheckIfWon()
+    private bool isBox
 	{
-		throw new System.NotImplementedException();
+		get;
+		set;
+	}
+
+    private bool isTruck
+	{
+		get;
+		set;
+	}
+
+    private bool isTarget
+	{
+		get;
+		set;
+	}
+
+    private bool isFilledTarget
+	{
+		get;
+		set;
+	}
+
+	public virtual Type Field_type
+	{
+		get;
+		set;
+	}
+
+	public virtual Level Level
+	{
+		get;
+		set;
 	}
 
 }

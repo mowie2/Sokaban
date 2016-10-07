@@ -9,26 +9,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Game
+public class OutputView
 {
-	public virtual Program Program
+	public virtual Level Level
 	{
 		get;
 		set;
 	}
 
-	public virtual InputView InputView
-	{
-		get;
-		set;
-	}
-
-	public virtual void StartGame()
-	{
-        Console.WriteLine("Welkom bij sokaban");
-	}
-
-	public virtual void CheckIfWon()
+	public virtual void PrintField()
 	{
 		throw new System.NotImplementedException();
 	}

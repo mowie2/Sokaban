@@ -15,10 +15,11 @@ public class Program
 
     static void Main(string[] args)
     {
-        Game game = new Game();
-        game.StartGame();
-        Console.ReadLine();
-
+       // Game game = new Game();
+        //game.StartGame();
+        //Console.ReadLine();
+        levelmanager a = new levelmanager();
+        a.ReadFile(1);
     }
 }
 

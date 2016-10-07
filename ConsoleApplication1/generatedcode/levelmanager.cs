@@ -48,13 +48,16 @@ public class levelmanager
 	{
         int counter = 0;
         string line;
+
+        string path = System.IO.Path.GetFullPath("doolhof" + number + ".txt");
         List<string> level = new List<string>();
         System.IO.StreamReader file =
-        new System.IO.StreamReader("C://Users/Rijken/Desktop/git/Sokaban/ConsoleApplication1/Levelfields/doolhof"+number+".txt");
+        new System.IO.StreamReader(path);
         while ((line = file.ReadLine()) != null)
         {
             level.Add(line);
             counter++;
+            Console.WriteLine(line);
         }
         file.Close();
         return level;

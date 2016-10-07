@@ -16,7 +16,9 @@ public class Program
     static void Main(string[] args)
     {
         Game game = new Game();
-        game.StartGame();
+       // game.StartGame();
+        Level l = new Level(10);
+        l.UpdateField();
         Console.ReadLine();
 
     }

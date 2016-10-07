@@ -30,11 +30,7 @@ public class Level
 		set;
 	}
 
-	public Item[][] playingField
-	{
-		get;
-		set;
-	}
+	public Item[,] playingField;
 
 	public virtual InputView Controller
 	{
@@ -47,7 +43,20 @@ public class Level
 		get;
 		set;
 	}
-
+    public Level(int levelSize)
+    {
+        xSize = levelSize;
+        ySize = levelSize;
+        playingField = new Item[levelSize, levelSize];
+        for(int index = 0; index < playingField.GetLength(0); index++)
+        {
+            for (int indey = 0; indey < playingField.GetLength(1); indey++)
+            {
+                Field f = new Field("." + index + "," + indey);
+                playingField[index, indey] = f;
+            }
+        }
+    }
 	public virtual void MoveDown()
 	{
 		throw new System.NotImplementedException();
@@ -70,12 +79,25 @@ public class Level
     public void UpdateField()
     {
         // loop door dubbele array 
-        for (int j = 0; j < playingField[0].Length; j++)
+        for (int j = 0; j < xSize; j++)
         {
-            for (int i = 0; i < playingField.Length; i++)
+            for (int i = 0; i < ySize; i++)
             {
-                //verander de naam indien nodig
-                playingField[j][i].PrintName();
+                if (playingField[j,i] != null)
+                {
+                    if(playingField[j,i].GetType() == typeof(Field))
+                    {
+                        Field temp = (Field)playingField[j,i];
+                        temp.DeterminName();
+                    }
+
+                    playingField[j,i].PrintName();
+                    if (i == ySize - 1)
+                    {
+                        Console.WriteLine("");
+                    }
+                }
+               
             }
         }
     }

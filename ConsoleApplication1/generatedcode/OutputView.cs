@@ -14,7 +14,7 @@ public class OutputView
 
 	public virtual void PrintField()
 	{
-		throw new System.NotImplementedException();
+        Level.UpdateField();
 	}
 
 }

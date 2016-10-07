@@ -13,14 +13,18 @@ public class Field : Item
         name = _name;
         originalName = _name;
     }
-    
-    public void addObject(Item _object) 
+
+    public void addObject(Item _object)
     {
         if (hasObject == null)
         {
             hasObject = _object;
         }
     }
+        public void RemoveObject()
+        {
+            hasObject = null;
+        }
 
     public void DeterminName()
     {

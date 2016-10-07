@@ -14,7 +14,7 @@ namespace ConsoleApplication1.generatedcode
 
         public void PrintName()
         {
-            Console.WriteLine(name);
+            Console.Write(name);
         }
     }
 

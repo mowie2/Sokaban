@@ -70,12 +70,12 @@ public class Level
     public void UpdateField()
     {
         // loop door dubbele array 
-        for (int j = 0; j < Fields[0].Length; j++)
+        for (int j = 0; j < playingField[0].Length; j++)
         {
-            for (int i = 0; i < Fields.Length; i++)
+            for (int i = 0; i < playingField.Length; i++)
             {
                 //verander de naam indien nodig
-                Fields[j][i].PrintName();
+                playingField[j][i].PrintName();
             }
         }
     }

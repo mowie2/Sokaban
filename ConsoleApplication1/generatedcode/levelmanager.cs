@@ -46,17 +46,12 @@ public class levelmanager
 
     public List<string> ReadFile(int number)
 	{
-        int counter = 0;
         string line;
-
-        string path = System.IO.Path.GetFullPath("doolhof" + number + ".txt");
         List<string> level = new List<string>();
-        System.IO.StreamReader file =
-        new System.IO.StreamReader(path);
+        StreamReader file = new StreamReader(@"Levelfields/doolhof"+ number +".txt");
         while ((line = file.ReadLine()) != null)
         {
             level.Add(line);
-            counter++;
             Console.WriteLine(line);
         }
         file.Close();

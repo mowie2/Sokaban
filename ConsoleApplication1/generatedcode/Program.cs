@@ -19,7 +19,8 @@ public class Program
         //game.StartGame();
         //Console.ReadLine();
         levelmanager a = new levelmanager();
-        a.ReadFile(1);
+        a.ReadFile(2);
+        Console.ReadLine();
     }
 }
 

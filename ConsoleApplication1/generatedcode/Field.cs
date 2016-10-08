@@ -12,6 +12,11 @@ public class Field : Item
     {
         name = _name;
         originalName = _name;
+      
+        if (_name.Equals("█"))
+        {
+            hasObject = new Item();
+        }
     }
 
     public void addObject(Item _object)

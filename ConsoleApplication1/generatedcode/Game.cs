@@ -12,9 +12,12 @@ using System.Text;
 public class Game
 {
     private bool gameIsWon = false;
-    Level level = new Level(5);
+    Level level;
     InputView iv = new InputView();
     List<string> validKeys = new List<string> { "W", "A", "S", "D" };
+    List<string> validLevels = new List<string> { "1", "2", "3", "4" };
+
+    levelmanager lm = new levelmanager();
 
 	public virtual InputView InputView
 	{
@@ -54,6 +57,15 @@ public class Game
 
     public void PlayTheGame()
     {
+        string levelID = Console.ReadLine();
+        if (!validLevels.Contains(levelID))
+        {
+            Console.WriteLine("please enter a number between 1 and 4");
+            PlayTheGame();
+        }
+
+        level = new Level(lm.ReadFile(int.Parse(levelID)));
+        level.UpdateField();
         while (!gameIsWon)
         {
             // returns key that you press wihtout printingit on the console window
@@ -62,10 +74,13 @@ public class Game
             if (!validKeys.Contains(key.Key.ToString().ToUpper()))
             {
                 Console.WriteLine("Please press only the valid keys: WASD");
-                PlayTheGame();
+                continue;
             }
             //Console.WriteLine(key.Key.ToString());
             level.MoveTruck(iv.Inputhandeler(key.Key.ToString()));
+
+            // update the map so it shows the new value's 
+            level.UpdateField();
         }
     }
 

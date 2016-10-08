@@ -40,34 +40,28 @@ public class Level
 		get;
 		set;
 	}
-    public Level(int levelSize)
+    public Level(List<string> levelFormat)
     {
-        xSize = levelSize;
-        ySize = levelSize;
-        playingField = new Item[levelSize, levelSize];
         iv = new InputView();
         truck = new Truck();
+        PrepareArray(levelFormat);
 
-        for(int index = 0; index < playingField.GetLength(0); index++)
-        {
-            for (int indey = 0; indey < playingField.GetLength(1); indey++)
-            {
-                Field f = new Field("." + index + "," + indey);
-                playingField[index, indey] = f;
-            }
-        }
     }
     public void UpdateField()
     {
-        // loop door dubbele array 
+        //clear the console so we can get a correct representation of whats in our array
+        Console.Clear();
+        // loop through the array
         for (int j = 0; j < xSize; j++)
         {
             for (int i = 0; i < ySize; i++)
             {
                 if (playingField[j,i] != null)
                 {
+                    // check if the item is a field
                     if(playingField[j,i].GetType() == typeof(Field))
                     {
+                        // determin the name that the field needs to display
                         Field temp = (Field)playingField[j,i];
                         temp.DeterminName();
                     }
@@ -99,6 +93,43 @@ public class Level
             case "W":
                 truck.MoveUp();
                 break;
+        }
+    }
+
+    public void PrepareArray(List<string> levelFormat)
+    {
+        // find the levels maximum size
+        ySize = 0;
+        xSize = levelFormat.Count();
+        for (int index = 0; index < levelFormat.Count(); index++)
+        {
+            if (levelFormat[index].Length > ySize)
+            {
+                ySize = levelFormat[index].Length;
+            }
+        }
+        // declaire array 
+        playingField = new Item[xSize, ySize];
+
+        // fill array
+        for (int xAxis = 0; xAxis < levelFormat.Count(); xAxis++)
+        {
+            string s = levelFormat[xAxis];
+
+            for (int yAxis = 0; yAxis < levelFormat[xAxis].Length; yAxis++)
+            {
+                string found = s[yAxis].ToString();
+                
+                if(found.Equals("@") || found.Equals("o"))
+                {
+                    playingField[xAxis, yAxis] = new Field(".");
+                }
+                else
+                {
+                    playingField[xAxis, yAxis] =  new Field(found);
+                }
+                
+            }
         }
     }
 }

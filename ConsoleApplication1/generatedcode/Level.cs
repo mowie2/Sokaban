@@ -32,11 +32,8 @@ public class Level
 
 	public Item[,] playingField;
 
-	public virtual InputView Controller
-	{
-		get;
-		set;
-	}
+    InputView iv;
+    Truck truck;
 
 	public virtual OutputView OutputView
 	{
@@ -48,6 +45,9 @@ public class Level
         xSize = levelSize;
         ySize = levelSize;
         playingField = new Item[levelSize, levelSize];
+        iv = new InputView();
+        truck = new Truck();
+
         for(int index = 0; index < playingField.GetLength(0); index++)
         {
             for (int indey = 0; indey < playingField.GetLength(1); indey++)
@@ -57,25 +57,6 @@ public class Level
             }
         }
     }
-	public virtual void MoveDown()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void MoveUp()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void Moveleft()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void MoveRight()
-	{
-		throw new System.NotImplementedException();
-	}
     public void UpdateField()
     {
         // loop door dubbele array 
@@ -99,6 +80,25 @@ public class Level
                 }
                
             }
+        }
+    }
+
+    public void MoveTruck(string _key)
+    {
+        switch (_key.ToString().ToUpper())
+        {
+            case "D":
+                truck.MoveRight();
+                break;
+            case "S":
+                truck.MoveDown();
+                break;
+            case "A":
+                truck.Moveleft();
+                break;
+            case "W":
+                truck.MoveUp();
+                break;
         }
     }
 }

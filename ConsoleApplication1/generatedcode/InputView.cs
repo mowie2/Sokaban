@@ -23,28 +23,24 @@ public class InputView
 		set;
 	}
 
-	public virtual void Inputhandeler(String input)
+	public string Inputhandeler(String input)
 	{
-        if(input.Length > 1)
-        { 
-            Console.WriteLine("Please type only 1 letter a time");
-            Console.ReadLine();
-        }
         switch (input.ToUpper())
         {
             case "W":
                 // go up
-                break;
+                return "W";
             case "A":
                 // go left
-                break;
+                return "A";
             case "S":
                 // go down
-                break;
+                return "S";
             case "D":
                 // go right
-                break;
+                return "D"; 
         }
+        return null;
 	}
 
 }

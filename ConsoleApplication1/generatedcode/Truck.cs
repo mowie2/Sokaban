@@ -13,5 +13,24 @@ namespace ConsoleApplication1.generatedcode
         {
             base.name = "@";
         }
+        public virtual void MoveDown()
+        {
+            Console.WriteLine("Moved Down");
+        }
+
+        public virtual void MoveUp()
+        {
+            Console.WriteLine("Moved up");
+        }
+
+        public virtual void Moveleft()
+        {
+            Console.WriteLine("Moved left");
+        }
+
+        public virtual void MoveRight()
+        {
+            Console.WriteLine("Moved right");
+        }
     }
 }

@@ -12,6 +12,9 @@ using System.Text;
 public class Game
 {
     private bool gameIsWon = false;
+    Level level = new Level(5);
+    InputView iv = new InputView();
+    List<string> validKeys = new List<string> { "W", "A", "S", "D" };
 
 	public virtual InputView InputView
 	{
@@ -53,7 +56,16 @@ public class Game
     {
         while (!gameIsWon)
         {
-
+            // returns key that you press wihtout printingit on the console window
+            ConsoleKeyInfo key = Console.ReadKey(true);
+            //check to make sure only valid keys are pressed
+            if (!validKeys.Contains(key.Key.ToString().ToUpper()))
+            {
+                Console.WriteLine("Please press only the valid keys: WASD");
+                PlayTheGame();
+            }
+            //Console.WriteLine(key.Key.ToString());
+            level.MoveTruck(iv.Inputhandeler(key.Key.ToString()));
         }
     }
 

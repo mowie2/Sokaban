@@ -86,26 +86,24 @@ public class Level
         switch (_key.ToString().ToUpper())
         {
             case "D":
-                Console.WriteLine(x);
-                Console.WriteLine(y);
-             
                 if(!playingField[x , y+1].name.Equals("#")){
                 if (playingField[x, y +1].hasObject != null)
                 {
-                    if (playingField[x , y +1].hasObject == box)
+                    if (playingField[x , y +1].hasObject.Equals(box))
                     {
                         if (playingField[x , y +2].hasObject == null)
                         {
                             playingField[x, y].RemoveObject();
-                            playingField[x , y +1].hasObject = truck;
-                            playingField[x , y +2].hasObject = box;
-
+                            playingField[x, y + 1].RemoveObject();
+                            playingField[x, y + 1].addObject(truck);
+                            playingField[x, y + 2].addObject(box);
+                            truck.MoveRight();
+                            break;
                         }
                     }
                 }
                 else if (playingField[x , y + 1].hasObject == null)
                 {
-                    //playingField[x, y] = new Field(".", null);
                     playingField[x, y].RemoveObject();
                     playingField[x, y + 1].addObject(truck);
                     truck.MoveRight();
@@ -115,14 +113,87 @@ public class Level
                 
                 break;
             case "S":
-                truck.MoveDown();
+                if (!playingField[x + 1, y].name.Equals("#"))
+                {
+                    if (playingField[x + 1, y].hasObject != null)
+                    {
+                        if (playingField[x + 1, y].hasObject == box)
+                        {
+                            if (playingField[x + 2, y].hasObject == null)
+                            {
+                                playingField[x, y].RemoveObject();
+                                playingField[x + 1, y].RemoveObject();
+                                playingField[x + 1, y].addObject(truck);
+                                playingField[x + 2, y].addObject(box);
+                                truck.MoveDown();
+                                break;
+                            }
+                        }
+                    }
+                    else if (playingField[x, y + 1].hasObject == null)
+                    {
+                       
+                        playingField[x, y].RemoveObject();
+                        playingField[x + 1, y].addObject(truck);
+                        truck.MoveDown();
+                        
+                    }
+                }
+               
                 break;
             case "A":
-                truck.Moveleft();
+               
+                if (!playingField[x, y - 1].name.Equals("#"))
+                {
+                    if (playingField[x, y - 1].hasObject != null)
+                    {
+                        if (playingField[x, y -1].hasObject == box)
+                        {
+                            if (playingField[x, y - 2].hasObject == null)
+                            {
+                                playingField[x, y].RemoveObject();
+                                playingField[x, y - 1].RemoveObject();
+                                playingField[x, y - 1].addObject(truck);
+                                playingField[x, y - 2].addObject(box);
+                                truck.Moveleft();
+                                break;
+                            }
+                        }
+                    }
+                    else if (playingField[x, y + 1].hasObject == null)
+                    {
+                        playingField[x, y].RemoveObject();
+                        playingField[x, y - 1].addObject(truck);
+                        truck.Moveleft();
+                    }
+                }
                 break;
             case "W":
-
-                truck.MoveUp();
+                if (!playingField[x - 1, y ].name.Equals("#"))
+                {
+                    if (playingField[x -1, y].hasObject != null)
+                    {
+                        if (playingField[x -1, y].hasObject == box)
+                        {
+                            if (playingField[x -2, y].hasObject == null)
+                            {
+                                playingField[x, y].RemoveObject();
+                                playingField[x - 1, y].RemoveObject();
+                                playingField[x -1, y ].addObject(truck);
+                                playingField[x - 2, y ].addObject(box);
+                                truck.MoveUp();
+                                break;
+                            } 
+                        }
+                    }
+                    else if (playingField[x - 1, y].hasObject == null)
+                    {
+                        playingField[x, y].RemoveObject();
+                        playingField[x - 1, y ].addObject(truck);
+                        truck.MoveUp();
+                    }
+                }
+               
                 break;
         }
     }
@@ -153,13 +224,13 @@ public class Level
                 
                 if(found.Equals("@") )
                 {
-                   Field field = new Field(found, truck);
+                   Field field = new Field(".", truck);
                     truck.yPos = yAxis;
                     truck.xPos = xAxis;
                     playingField[xAxis, yAxis] = field;
                     
                 }else if( found.Equals("o")){
-                    playingField[xAxis, yAxis] = new Field(found, box);
+                    playingField[xAxis, yAxis] = new Field(".", box);
                 }
                 
                 else

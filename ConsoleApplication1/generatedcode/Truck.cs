@@ -15,23 +15,25 @@ namespace ConsoleApplication1.generatedcode
         }
         public virtual void MoveDown()
         {
+            this.xPos = this.xPos + 1;
             Console.WriteLine("Moved Down");
         }
 
         public virtual void MoveUp()
         {
+            this.xPos = this.xPos - 1;
             Console.WriteLine("Moved up");
         }
 
         public virtual void Moveleft()
         {
+            this.yPos = this.yPos - 1;
             Console.WriteLine("Moved left");
         }
 
         public virtual void MoveRight()
         {
             this.yPos = this.yPos +1;
-
             Console.WriteLine("Moved right");
         }
     }

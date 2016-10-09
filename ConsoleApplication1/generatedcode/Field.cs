@@ -33,8 +33,7 @@ public class Field : Item
     }
         public void RemoveObject()
         {
-            Field field = new Field(".", null);
-            
+            hasObject = null;
         }
 
     public void DeterminName()

@@ -55,7 +55,6 @@ public class Game
 	{
         if (level.getboxesleft() == true)
         {
-            Console.WriteLine("You have won this level!");
             return true;
             
         }
@@ -87,17 +86,11 @@ public class Game
             string a = key.Key.ToString().ToUpper();
             if(a.Equals("R"))
             {
-                Console.Clear();
-                level = new Level(lm.ReadFile(int.Parse(levelID)));
-                level.UpdateField();
+                ResetLevel();
             }
             if (a.Equals("Q"))
             {
-                Console.Clear();
-                StartGame();
-                PlayTheGame();
-                Console.ReadLine();
-                
+                ResetSokoban();
             }
             //Console.WriteLine(key.Key.ToString());
             level.MoveTruck(iv.Inputhandeler(key.Key.ToString()));
@@ -105,11 +98,22 @@ public class Game
             // update the map so it shows the new value's 
             level.UpdateField();
         }
+        Console.WriteLine("You won this level! Press enter to go back to the menu");
+        Console.ReadLine();
+        ResetSokoban();
+    }
+    public void ResetSokoban()
+    {
         Console.Clear();
         StartGame();
         PlayTheGame();
         Console.ReadLine();
-       
+    }
+    public void ResetLevel()
+    {
+        Console.Clear();
+        level = new Level(lm.ReadFile(int.Parse(levelID)));
+        level.UpdateField();
     }
     
 }

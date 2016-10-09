@@ -91,7 +91,7 @@ public class Level
                 {
                     if (playingField[x , y +1].hasObject.Equals(box))
                     {
-                        if (playingField[x , y +2].hasObject == null)
+                        if (playingField[x, y + 2].hasObject == null && !playingField[x, y + 2].name.Equals("#")) 
                         {
                             playingField[x, y].RemoveObject();
                             playingField[x, y + 1].RemoveObject();
@@ -119,7 +119,7 @@ public class Level
                     {
                         if (playingField[x + 1, y].hasObject == box)
                         {
-                            if (playingField[x + 2, y].hasObject == null)
+                            if (playingField[x + 2, y].hasObject == null && !playingField[x + 2, y ].name.Equals("#"))
                             {
                                 playingField[x, y].RemoveObject();
                                 playingField[x + 1, y].RemoveObject();
@@ -130,7 +130,7 @@ public class Level
                             }
                         }
                     }
-                    else if (playingField[x, y + 1].hasObject == null)
+                    else if (playingField[x +1, y ].hasObject == null)
                     {
                        
                         playingField[x, y].RemoveObject();
@@ -149,7 +149,7 @@ public class Level
                     {
                         if (playingField[x, y -1].hasObject == box)
                         {
-                            if (playingField[x, y - 2].hasObject == null)
+                            if (playingField[x, y - 2].hasObject == null && !playingField[x, y - 2].name.Equals("#"))
                             {
                                 playingField[x, y].RemoveObject();
                                 playingField[x, y - 1].RemoveObject();
@@ -160,7 +160,7 @@ public class Level
                             }
                         }
                     }
-                    else if (playingField[x, y + 1].hasObject == null)
+                    else if (playingField[x, y - 1].hasObject == null)
                     {
                         playingField[x, y].RemoveObject();
                         playingField[x, y - 1].addObject(truck);
@@ -175,7 +175,7 @@ public class Level
                     {
                         if (playingField[x -1, y].hasObject == box)
                         {
-                            if (playingField[x -2, y].hasObject == null)
+                            if (playingField[x - 2, y].hasObject == null || !playingField[x -2, y ].name.Equals("#"))
                             {
                                 playingField[x, y].RemoveObject();
                                 playingField[x - 1, y].RemoveObject();

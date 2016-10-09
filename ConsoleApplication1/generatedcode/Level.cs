@@ -87,7 +87,7 @@ public class Level
         Console.WriteLine(" ");
         Console.WriteLine("_______________________________________________________________________________");
         Console.WriteLine(" ");
-        Console.WriteLine("> Gebruik WSDA om de truck te navigeren (Q = stop, R = reset)");
+        Console.WriteLine("> Use WSDA to navigate the truck (Q = stop, R = reset)");
 
     }
 

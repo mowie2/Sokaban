@@ -102,6 +102,7 @@ public class Game
         Console.ReadLine();
         ResetSokoban();
     }
+
     public void ResetSokoban()
     {
         Console.Clear();

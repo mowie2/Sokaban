@@ -55,8 +55,7 @@ public class Game
 	{
         if (level.getboxesleft() == true)
         {
-            Console.WriteLine("game is won");
-            Console.ReadLine();
+            Console.WriteLine("You have won this level!");
             return true;
             
         }
@@ -106,6 +105,10 @@ public class Game
             // update the map so it shows the new value's 
             level.UpdateField();
         }
+        Console.Clear();
+        StartGame();
+        PlayTheGame();
+        Console.ReadLine();
        
     }
     

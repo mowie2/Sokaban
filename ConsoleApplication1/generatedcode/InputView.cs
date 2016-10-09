@@ -38,7 +38,10 @@ public class InputView
                 return "S";
             case "D":
                 // go right
-                return "D"; 
+                return "D";
+            case "R":
+                // go right
+                return "R";
         }
         return null;
 	}

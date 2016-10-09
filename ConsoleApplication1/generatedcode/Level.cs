@@ -53,6 +53,13 @@ public class Level
     {
         //clear the console so we can get a correct representation of whats in our array
         Console.Clear();
+        Console.WriteLine("  _______________");
+        Console.WriteLine(" |    Sokoban    |");
+        Console.WriteLine(" |_______________|");
+        Console.WriteLine("");
+        Console.WriteLine("_______________________________________________________________________________");
+        Console.WriteLine(" ");
+
         // loop through the array
         for (int j = 0; j < xSize; j++)
         {
@@ -77,6 +84,11 @@ public class Level
                
             }
         }
+        Console.WriteLine(" ");
+        Console.WriteLine("_______________________________________________________________________________");
+        Console.WriteLine(" ");
+        Console.WriteLine("> Gebruik WSDA om de truck te navigeren (Q = stop, R = reset)");
+
     }
 
     public Boolean getboxesleft()

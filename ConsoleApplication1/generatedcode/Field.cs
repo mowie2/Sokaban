@@ -16,10 +16,7 @@ public class Field : Item
         name = _name;
         originalName = _name;
       
-        if (_name.Equals("█"))
-        {
-            hasObject = new Item();
-        }
+       
     }
 
     public void addObject(Item _object)
@@ -38,6 +35,7 @@ public class Field : Item
 
     public void DeterminName()
     {
+        
         if (hasObject == null)
         {
             name = originalName;
@@ -45,6 +43,14 @@ public class Field : Item
         else
         {
             name = hasObject.name;
+        }
+        if (hasObject != null)
+        {
+            if (hasObject.name.Equals("O") && this.originalName.Equals("x"))
+            {
+                name = "0";
+
+            }
         }
     }
     

@@ -79,6 +79,21 @@ public class Level
         }
     }
 
+    public Boolean getboxesleft()
+    {
+        for (int j = 0; j < xSize; j++)
+        {
+            for (int i = 0; i < ySize; i++)
+            {
+                if (playingField[j, i].name.Equals("O"))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public void MoveTruck(string _key)
     {
         int x = truck.xPos;
@@ -86,12 +101,13 @@ public class Level
         switch (_key.ToString().ToUpper())
         {
             case "D":
-                if(!playingField[x , y+1].name.Equals("#")){
+                if (!playingField[x, y + 1].name.Equals("█"))
+                {
                 if (playingField[x, y +1].hasObject != null)
                 {
                     if (playingField[x , y +1].hasObject.Equals(box))
                     {
-                        if (playingField[x, y + 2].hasObject == null && !playingField[x, y + 2].name.Equals("#")) 
+                        if (playingField[x, y + 2].hasObject == null && !playingField[x, y + 2].name.Equals("█")) 
                         {
                             playingField[x, y].RemoveObject();
                             playingField[x, y + 1].RemoveObject();
@@ -113,13 +129,13 @@ public class Level
                 
                 break;
             case "S":
-                if (!playingField[x + 1, y].name.Equals("#"))
+                if (!playingField[x + 1, y].name.Equals("█"))
                 {
                     if (playingField[x + 1, y].hasObject != null)
                     {
                         if (playingField[x + 1, y].hasObject == box)
                         {
-                            if (playingField[x + 2, y].hasObject == null && !playingField[x + 2, y ].name.Equals("#"))
+                            if (playingField[x + 2, y].hasObject == null && !playingField[x + 2, y].name.Equals("█"))
                             {
                                 playingField[x, y].RemoveObject();
                                 playingField[x + 1, y].RemoveObject();
@@ -142,14 +158,14 @@ public class Level
                
                 break;
             case "A":
-               
-                if (!playingField[x, y - 1].name.Equals("#"))
+
+                if (!playingField[x, y - 1].name.Equals("█"))
                 {
                     if (playingField[x, y - 1].hasObject != null)
                     {
                         if (playingField[x, y -1].hasObject == box)
                         {
-                            if (playingField[x, y - 2].hasObject == null && !playingField[x, y - 2].name.Equals("#"))
+                            if (playingField[x, y - 2].hasObject == null && !playingField[x, y - 2].name.Equals("█"))
                             {
                                 playingField[x, y].RemoveObject();
                                 playingField[x, y - 1].RemoveObject();
@@ -169,13 +185,13 @@ public class Level
                 }
                 break;
             case "W":
-                if (!playingField[x - 1, y ].name.Equals("#"))
+                if (!playingField[x - 1, y].name.Equals("█"))
                 {
                     if (playingField[x -1, y].hasObject != null)
                     {
                         if (playingField[x -1, y].hasObject == box)
                         {
-                            if (playingField[x - 2, y].hasObject == null || !playingField[x -2, y ].name.Equals("#"))
+                            if (playingField[x - 2, y].hasObject == null && !playingField[x - 2, y].name.Equals("█"))
                             {
                                 playingField[x, y].RemoveObject();
                                 playingField[x - 1, y].RemoveObject();
@@ -233,6 +249,10 @@ public class Level
                     playingField[xAxis, yAxis] = new Field(".", box);
                 }
                 
+                else if(found.Equals("#"))
+                {
+                    playingField[xAxis, yAxis] = new Field("█", null);
+                }
                 else
                 {
                     playingField[xAxis, yAxis] = new Field(found, null);

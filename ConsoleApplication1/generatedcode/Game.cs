@@ -50,9 +50,16 @@ public class Game
         PlayTheGame();
 	}
 
-	public virtual void CheckIfWon()
+	public Boolean CheckIfWon()
 	{
-		
+        if (level.getboxesleft() == true)
+        {
+            Console.WriteLine("game is won");
+            Console.ReadLine();
+            return true;
+            
+        }
+        return false;
 	}
 
     public void PlayTheGame()
@@ -66,7 +73,7 @@ public class Game
 
         level = new Level(lm.ReadFile(int.Parse(levelID)));
         level.UpdateField();
-        while (!gameIsWon)
+        while (!CheckIfWon())
         {
             // returns key that you press wihtout printingit on the console window
             ConsoleKeyInfo key = Console.ReadKey(true);

@@ -30,6 +30,8 @@ namespace ConsoleApplication1.generatedcode
 
         public virtual void MoveRight()
         {
+            this.yPos = this.yPos +1;
+
             Console.WriteLine("Moved right");
         }
     }

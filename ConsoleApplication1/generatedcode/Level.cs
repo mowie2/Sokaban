@@ -30,10 +30,11 @@ public class Level
 		set;
 	}
 
-	public Item[,] playingField;
+	public Field[,] playingField;
 
     InputView iv;
     Truck truck;
+    Box box;
 
 	public virtual OutputView OutputView
 	{
@@ -44,6 +45,7 @@ public class Level
     {
         iv = new InputView();
         truck = new Truck();
+        box = new Box();
         PrepareArray(levelFormat);
 
     }
@@ -79,10 +81,38 @@ public class Level
 
     public void MoveTruck(string _key)
     {
+        int x = truck.xPos;
+        int y = truck.yPos;
         switch (_key.ToString().ToUpper())
         {
             case "D":
-                truck.MoveRight();
+                Console.WriteLine(x);
+                Console.WriteLine(y);
+             
+                if(!playingField[x , y+1].name.Equals("#")){
+                if (playingField[x, y +1].hasObject != null)
+                {
+                    if (playingField[x , y +1].hasObject == box)
+                    {
+                        if (playingField[x , y +2].hasObject == null)
+                        {
+                            playingField[x, y].RemoveObject();
+                            playingField[x , y +1].hasObject = truck;
+                            playingField[x , y +2].hasObject = box;
+
+                        }
+                    }
+                }
+                else if (playingField[x , y + 1].hasObject == null)
+                {
+                    //playingField[x, y] = new Field(".", null);
+                    playingField[x, y].RemoveObject();
+                    playingField[x, y + 1].addObject(truck);
+                    truck.MoveRight();
+                }
+                }
+             
+                
                 break;
             case "S":
                 truck.MoveDown();
@@ -91,6 +121,7 @@ public class Level
                 truck.Moveleft();
                 break;
             case "W":
+
                 truck.MoveUp();
                 break;
         }
@@ -109,7 +140,7 @@ public class Level
             }
         }
         // declaire array 
-        playingField = new Item[xSize, ySize];
+        playingField = new Field[xSize, ySize];
 
         // fill array
         for (int xAxis = 0; xAxis < levelFormat.Count(); xAxis++)
@@ -120,13 +151,20 @@ public class Level
             {
                 string found = s[yAxis].ToString();
                 
-                if(found.Equals("@") || found.Equals("o"))
+                if(found.Equals("@") )
                 {
-                    playingField[xAxis, yAxis] = new Field(".");
+                   Field field = new Field(found, truck);
+                    truck.yPos = yAxis;
+                    truck.xPos = xAxis;
+                    playingField[xAxis, yAxis] = field;
+                    
+                }else if( found.Equals("o")){
+                    playingField[xAxis, yAxis] = new Field(found, box);
                 }
+                
                 else
                 {
-                    playingField[xAxis, yAxis] =  new Field(found);
+                    playingField[xAxis, yAxis] = new Field(found, null);
                 }
                 
             }

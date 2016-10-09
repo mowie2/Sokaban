@@ -6,10 +6,13 @@ using System.Text;
 
 public class Field : Item
 {
-    Item hasObject;
+    public Item hasObject {get;set;}
     private string originalName{get;set;}
-    public Field(String _name)
+    public int xPos { get; set; }
+    public int yPos { get; set; }
+    public Field(String _name, Item objects)
     {
+        hasObject = objects;
         name = _name;
         originalName = _name;
       
@@ -24,11 +27,14 @@ public class Field : Item
         if (hasObject == null)
         {
             hasObject = _object;
+            
+
         }
     }
         public void RemoveObject()
         {
-            hasObject = null;
+            Field field = new Field(".", null);
+            
         }
 
     public void DeterminName()

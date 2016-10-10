@@ -47,7 +47,7 @@ public class Game
         Console.WriteLine("|      @ : truck              |                      |");
         Console.WriteLine("|  WASD  : beweging           |                      |");
         Console.WriteLine("└────────────────────────────────────────────────────┘");
-        Console.WriteLine("Press enter to continoue");
+        Console.WriteLine("please enter a number between 1 and 4 to select a level");
         PlayTheGame();
 	}
 
